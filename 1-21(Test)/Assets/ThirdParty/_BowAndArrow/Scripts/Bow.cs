@@ -1,5 +1,9 @@
-﻿using System.Collections;
+﻿//Adding Haptics and Audio Clips
+//2025.02.11
+using Oculus.Haptics; //Dated, use Meta.XR
+using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.OpenXR.Input;
 
 public class Bow : MonoBehaviour
 {
@@ -19,6 +23,9 @@ public class Bow : MonoBehaviour
     private float m_PullValue = 0.0f;
 
     public float pullMultiplier = 1;
+
+    [Header("Haptics")]
+    public HapticClipPlayer hapticClipPlayer; //Refrence Haptic Library Class
 
     private void Awake()
     {
@@ -91,6 +98,7 @@ public class Bow : MonoBehaviour
         // If we've pulled far enough, fire
         if (m_PullValue > 0.25f)
             FireArrow();
+            PlayHapticFeedback();
 
         // Clear
         m_PullingHand = null;
@@ -108,5 +116,17 @@ public class Bow : MonoBehaviour
     {
         m_CurrentArrow.Fire(m_PullValue * pullMultiplier);
         m_CurrentArrow = null;
+    }
+    private void PlayHapticFeedback()
+    {
+        if (m_PullingHand != null)
+        {
+            HapticSource hapticSource = m_PullingHand.GetComponent<HapticSource>();
+
+            if(hapticSource != null)
+            {
+                hapticSource.Play();
+            }
+        }
     }
 }

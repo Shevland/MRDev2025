@@ -8346,6 +8346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864676682}
+  - component: {fileID: 864676683}
   m_Layer: 0
   m_Name: RightHandAnchor
   m_TagString: Untagged
@@ -8371,6 +8372,24 @@ Transform:
   - {fileID: 1145108220}
   m_Father: {fileID: 1798019038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &864676683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864676681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc93c7e1ae142448d4a122be86ea8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 2460798210113038985, guid: 74a6ea43f5e52854aacf698c799accf5, type: 3}
+  _controller: 0
+  _loop: 0
+  _amplitude: 1
+  _frequencyShift: 0
+  _priority: 128
 --- !u!1 &870545071
 GameObject:
   m_ObjectHideFlags: 0
